@@ -8,14 +8,16 @@
     @if(ViewBag.data.Count > 0)
     {
         <table>
-            <th>Name:</th>
-            <th>Address</th>
-            <th>Rating</th>
-            <th>Status</th>
+            <tr>
+                <th>Name:</th>
+                <th>Address</th>
+                <th>Rating</th>
+                <th>Status</th>
+            </tr>
         @foreach(Data data in ViewBag.data)
         {
             <tr>
-                <td>@data.Name</td>
+                <td><a href="/details/@data.BusinessId" target="_blank">@data.Name</a></td>
                 <td>@data.formatted_address</td>
                 <td>@data.rating</td>
                 <td>@data.Business_Status</td>
