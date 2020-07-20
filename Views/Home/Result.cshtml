@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    @if(ViewBag.data.Count > 0)
+    {
+        <table>
+            <th>Name:</th>
+            <th>Address</th>
+            <th>Rating</th>
+            <th>Status</th>
+        @foreach(Data data in ViewBag.data)
+        {
+            <tr>
+                <td>@data.Name</td>
+                <td>@data.formatted_address</td>
+                <td>@data.rating</td>
+                <td>@data.Business_Status</td>
+            </tr>
+        }
+        </table>
+    }
+    else
+    {
+     <h4>No results</h4>
+    }
+</body>
+</html>
