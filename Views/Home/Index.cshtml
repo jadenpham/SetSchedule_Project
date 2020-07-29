@@ -14,27 +14,37 @@
 <body>
     <div class="form-group">
         <form action="/search" method="post">
+
             <label>Input Topic</label>
             <span class="err_message" asp-validation-for="Topic"></span>
             <input type="text" name="Topic" />
+            
             <label>Input Address</label>
             <span class="err_message" asp-validation-for="Address"></span>
-            <input type="text" name="Address" id="search_input" />
+            <input id="addressSearchField" type="text" name="Address" autocomplete="on" runat="server" />
+            
             <label>Distance from address (in miles)</label>
             <span class="err_message" asp-validation-for="Distance"></span>
             <input type="number" name="Distance" />
+
+            <input type="hidden" id="locationLat" name="Lattitude" />
+            <input type="hidden" id="locationLng" name="Longitude" />
+
             <button type="submit">Search</button>
         </form>
     </div>
     <script>
-        var searchInput = 'search_input';
+
         $(document).ready(function () {
-            var autocomplete;
-            autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
-                types: ['geocode'],
+            var addressInput = document.getElementById('addressSearchField');
+            var autocomplete = new google.maps.places.Autocomplete(addressInput);
+
+            //autocomplete.setFields(['address_component']);
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                var place = autocomplete.getPlace();
+                document.getElementById('locationLat').value = place.geometry.location.lat();
+                document.getElementById('locationLng').value = place.geometry.location.lng();
             });
-            autocomplete.setFields(['address_component']);
-            google.maps.event.addListener(autocomplete, 'place_changed');
         });
     </script>
 </body>

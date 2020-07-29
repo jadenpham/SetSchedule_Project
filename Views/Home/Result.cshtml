@@ -13,6 +13,7 @@
                 <th>Address</th>
                 <th>Rating</th>
                 <th>Status</th>
+                <th><a href="/">New search</a></th>
             </tr>
         @foreach(Data data in ViewBag.data)
         {
@@ -28,6 +29,7 @@
     else
     {
      <h4>No results</h4>
+     <a href="/">Search again</a>
     }
 </body>
 </html>

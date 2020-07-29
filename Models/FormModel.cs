@@ -16,5 +16,7 @@ namespace WebApplication1.Models
         [Required]
         [Range(1, 30, ErrorMessage ="Input value between 1 and 30")]
         public int Distance { get; set; }
+        public double Lattitude { get; set; }
+        public double Longitude { get; set; }
     }
 }
