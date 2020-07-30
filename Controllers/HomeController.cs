@@ -72,8 +72,17 @@ namespace WebApplication1.Controllers
         public IActionResult Result()
         {
             //add google map here? click on address and pops up a map w location
-            ViewBag.data = JsonConvert.DeserializeObject<List<Data>>(Convert.ToString(TempData["data"]));
-            return View();
+            try
+            {
+                 object data = JsonConvert.DeserializeObject<List<Data>>(Convert.ToString(TempData["data"]));
+                TempData.Keep("data");
+                ViewBag.data = data;
+                return View();
+            }
+            catch (Exception)
+            {
+                return View("Index");
+            }
         }
 
         [HttpGet("details/{businessId}")]

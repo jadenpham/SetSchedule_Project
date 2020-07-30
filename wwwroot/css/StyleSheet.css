@@ -13,3 +13,6 @@ label, input{
     color: red;
     font: bold;
 }
+table, th, td {
+    border: 1px solid black;
+}
