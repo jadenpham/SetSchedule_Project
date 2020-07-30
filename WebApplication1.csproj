@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <Content Remove="Views\Home\Details.cshtml" />
+    <Content Remove="Views\Home\Map.cshtml" />
     <Content Remove="Views\Home\Result.cshtml" />
     <Content Remove="Views\Home\Yelp.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Home\Details.cshtml" />
+    <None Include="Views\Home\Map.cshtml" />
     <None Include="Views\Home\Result.cshtml" />
     <None Include="Views\Home\Yelp.cshtml" />
   </ItemGroup>

@@ -6,15 +6,17 @@
 </head>
 <body>
 
-      <h4>Business Name : @ViewBag.detailData.Name</h4>
-    @if(ViewBag.detailData.PhoneNumber != null)
+    @if (ViewBag.detailData.PhoneNumber != null && ViewBag.url!="Null")
     {
-      <h4>Phone Number(click for Yelp) : <a href="/yelp/@ViewBag.detailData.PhoneNumber">@ViewBag.detailData.PhoneNumber</a></h4>
-
+        <h4><a href="@ViewBag.Url" target="_blank"> Business Name : @ViewBag.detailData.Name </a></h4>
+        <h4>Phone Number: @ViewBag.detailData.PhoneNumber</h4>
+        <a href="/">Home</a>
     }
     else
     {
+        <h4>Business Name: @ViewBag.detailData.Name</h4>
         <h4>Phone Number: N/A</h4>
+        <a href="/">Home</a>
     }
 
 

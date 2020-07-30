@@ -59,14 +59,12 @@ namespace WebApplication1
         {
             JObject jObject = JObject.Parse(str);
             JToken jResults = jObject["result"];
-            //return new BusinessDetail((string)jResults[0]["name"], (string)jResults[0])
-            //if theres a phone number then add it
             if (jResults["formatted_phone_number"] != null)
             {
                 jResults["formatted_phone_number"] = ConvertToNumber((string)jResults["formatted_phone_number"]);
-                return new BusinessDetail((string)jResults["name"], (string)jResults["formatted_phone_number"]);
+                return new BusinessDetail((string)jResults["name"], 
+                                            (string)jResults["formatted_phone_number"]);
             }
-            //else just use constructor w name
             else
             {
                 return new BusinessDetail((string)jResults["name"]);

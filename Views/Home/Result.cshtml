@@ -9,18 +9,18 @@
     {
         <table>
             <tr>
-                <th>Name:</th>
+                <th>Name</th>
                 <th>Address</th>
                 <th>Rating</th>
                 <th>Status</th>
                 <th><a href="/">New search</a></th>
             </tr>
-        @foreach(Data data in ViewBag.data)
+        @foreach (Data data in ViewBag.data)
         {
             <tr>
                 <td><a href="/details/@data.BusinessId" target="_blank">@data.Name</a></td>
-                <td>@data.formatted_address</td>
-                <td>@data.rating</td>
+                <td><a href="/map/@data.Formatted_address" target="_blank"> @data.Formatted_address</a></td>
+                <td>@data.Rating</td>
                 <td>@data.Business_Status</td>
             </tr>
         }

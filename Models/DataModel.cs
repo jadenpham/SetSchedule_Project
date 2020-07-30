@@ -5,38 +5,26 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    //public class GoogleResult
-    //{
-    //    public string BusinessName { get; set; }
-    //    public string Business_Status { get; set; }
-    //    public string Address { get; set; }
-    //    public double Rating { get; set; }
-    //    public string[] BusinessType { get; set; }
-    //    public override string ToString()
-    //    {
-    //        return $"{BusinessName} : {Business_Status}, {Address}, {Rating}, {BusinessType}";
-    //    }
-    //}
     public class Data
     {
         public Data(string name, string status, string address, double rating, string businessId)
         {
             Name = name;
             Business_Status = status;
-            formatted_address = address;
-            this.rating = rating;
+            Formatted_address = address;
+            Rating = rating;
             BusinessId = businessId;
         }
         public string Name { get; set; }
         public string Business_Status { get; set; }
-        public string formatted_address { get; set; }
-        public double rating { get; set; }
+        public string Formatted_address { get; set; }
+        public double Rating { get; set; }
         public string BusinessId { get; set; }
 
         public int PhoneNumber { get; set; }
         public override string ToString()
         {
-            return $"{Name} : {Business_Status}, {formatted_address}, Rating: {rating}";
+            return $"{Name} : {Business_Status}, {Formatted_address}, Rating: {Rating}";
         }
     }
 
